@@ -1,1 +1,1 @@
-Chrome extension for translating search queries to other languages. I like using this while travelling abroad to find local recommendations and news. Subscription key/API calls in popup.js
+Chrome extension for translating search queries to other languages. To use this, you'll need to set up subscription key/API calls with your translator of choice in popup.js -- I've been using Microsoft Azure's API, which gives 2 million free characters as of writing this.
