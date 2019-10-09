@@ -29,15 +29,12 @@ document.addEventListener('DOMContentLoaded', function() {
         var f = d.createElement('form');
         f.action = 'https://api.cognitive.microsofttranslator.com/detect';
         f.method = 'post';
-        var i = d.createElement('input');
-        i.value = queryInput;
-        f.appendChild(i);
-        d.body.appendChild(f);
-        let selectedLanguage = desiredLanguage.querySelector('option[selected]').setAttribute('value');
-        let translated = getTranslation(i.value, selectedLanguage)
-       
+        let translated=queryInput.value;
+        //let selectedLanguage = desiredLanguage.querySelector('option[selected]').setAttribute('value');
+        //let translated = getTranslation(i.value, selectedLanguage)
+
         newUrl = 'http://www.google.com/search?q='+translated.split(' ').join('+')
-        window.location.href = newUrl
+        chrome.tabs.create({url: newUrl});
       });
 
     desiredLanguage.addEventListener('change', (event) => {
